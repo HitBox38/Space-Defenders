@@ -87,7 +87,7 @@ public class DefenderManager : MonoBehaviour
 
         if (playerSeen)
         {
-            for (int i = 0; i < fireRate; i++)
+            for (int i = 0; i < fireRate && playerSeen; i++)
             {
                 yield return new WaitForSeconds(timeBetweenFireRateShots);
                 GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + projectileDirection, Quaternion.identity);
