@@ -70,10 +70,14 @@ public class UnitMovement : MonoBehaviour
         }
         else
         {
+            List<Vector3> newWps = new List<Vector3>();
             for (int i = 0; i < waypoints.Count; i++)
             {
-                waypoints[i] += new Vector3(0, 3, 0); // FIXED Y VALUE OF THE HIGHEST MOST WAYPOINT NODE
+                float distance = Vector3.Distance(waypoints[waypoints.Count - 1], waypoints[0]);
+                newWps.Add(waypoints[i] + new Vector3(0, distance, 0));
             }
+            waypoints = newWps;
+
             currentWaypointIndex = 0;
         }
         /*
