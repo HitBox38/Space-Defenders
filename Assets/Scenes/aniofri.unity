@@ -366,17 +366,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7114936943535781671, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7114936943535781688, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
-      propertyPath: reAimTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7114936943535781688, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
-      propertyPath: playerShipDetectorRadius
-      value: 18
+    - target: {fileID: 5485273981568252225, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.08
       objectReference: {fileID: 0}
     - target: {fileID: 7114936943535781689, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
       propertyPath: m_RootOrder
@@ -425,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 7114936943535781693, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
       propertyPath: m_Name
       value: Defender
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114936944738145834, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
@@ -575,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 913571420305877502, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 913571420305877502, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -620,6 +616,14 @@ PrefabInstance:
     - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_Offset.y
       value: 8.917761
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842575031890223274, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842575031890223274, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7561e15bb0f23489869766b467ff1f, type: 3}

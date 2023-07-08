@@ -12,6 +12,7 @@ public class DefenderManager : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private float rotationSpeed = 450;
     [SerializeField] private float reAimTime = 2;
+    [SerializeField] private Transform canon;
     [Header("Defender Fire")]
     [SerializeField] private int fireRate = 1;
     [SerializeField] private float timeBetweenShots = 1;
@@ -37,7 +38,7 @@ public class DefenderManager : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, defenderAngle), rotationSpeed * Time.deltaTime);
+        canon.rotation = Quaternion.Lerp(canon.rotation, Quaternion.Euler(0, 0, defenderAngle - 180), rotationSpeed * Time.deltaTime);
 
         if (DefenderHealth <= 0)
         {
