@@ -349,6 +349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2118780964}
     m_Modifications:
+    - target: {fileID: 2106071292772998696, guid: 76a42efdb59cc6c41a570cb48df44bde, type: 3}
+      propertyPath: settlementPos
+      value: 
+      objectReference: {fileID: 1824727069}
     - target: {fileID: 2106071292772998697, guid: 76a42efdb59cc6c41a570cb48df44bde, type: 3}
       propertyPath: m_Name
       value: MiniDefendersManager
@@ -751,6 +755,11 @@ Transform:
 --- !u!4 &1824727065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 913571420305877502, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+  m_PrefabInstance: {fileID: 1832657299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1824727069 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
   m_PrefabInstance: {fileID: 1832657299}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1832657299

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MiniDefenderManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject miniDefender;
+    [SerializeField] private GameObject miniDefender;
+    [SerializeField] private BoxCollider2D settlementPos;
     private float TimeT;
 
     // Update is called once per frame
@@ -23,7 +23,11 @@ public class MiniDefenderManager : MonoBehaviour
 
     void SummonMiniDefender()
     {
-        Instantiate(miniDefender, new Vector3(UnityEngine.Random.Range(-15, 15), 8, 0), miniDefender.transform.rotation);
+        float min, max;
+        min = settlementPos.bounds.min.x;
+        max = settlementPos.bounds.max.x;
+
+        Instantiate(miniDefender, new Vector3(UnityEngine.Random.Range(min, max), settlementPos.bounds.center.y, 0), miniDefender.transform.rotation);
     }
 
 }

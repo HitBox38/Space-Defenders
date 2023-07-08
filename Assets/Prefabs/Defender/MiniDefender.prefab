@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1191376207394188586, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7114936943535781688, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
       propertyPath: playerShipDetectorRadius
       value: 4
@@ -71,5 +75,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniDefender
       objectReference: {fileID: 0}
+    - target: {fileID: 7114936944738145833, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66c5004ff314c6043ba69124408e148a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
