@@ -5,28 +5,26 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float strength, projSpeed, projLifespan;
+    private float strength;
 
     private float TimeT;
 
     // Set strength from UnitStatManager
-    public void SetStats(float str, float ps, float ls)
+    public void SetStats(float str)
     {
         strength = str;
-        projSpeed = ps;
-        projLifespan = ls;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, projSpeed, 0);
+        transform.position += new Vector3(0, 0.5f, 0);
 
         // Increment time by deltaTime
         TimeT += Time.deltaTime;
 
         // Shoot
-        if (TimeT > projLifespan)
+        if (TimeT > 4)
         {
             Destroy(gameObject);
         }

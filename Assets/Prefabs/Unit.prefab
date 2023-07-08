@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 4922621141834788688, guid: 82993f577f603c34fa83a4055d83be90, type: 3}
+  explosion: {fileID: 6324212439248621650, guid: de883278dcba4994cb809a53f48d7242, type: 3}
 --- !u!50 &4583620336316625151
 Rigidbody2D:
   serializedVersion: 4
@@ -135,13 +136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ce48e434b723543b442ff675730048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  speed: 4
-  strength: 2
-  cost: 2
-  projSpeed: 0.2
-  fireRate: 1
-  projLifespan: 5
+  health: 40
+  speed: 40
+  strength: 5
+  kamikaze: 15
+  cost: 45
+  fireRate: 30
 --- !u!58 &-7819188680272883451
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,23 +9,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: cost
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: speed
-      value: 5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: health
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: kamikaze
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: strength
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: projSpeed

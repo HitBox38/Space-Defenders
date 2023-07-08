@@ -5,6 +5,8 @@ using UnityEngine;
 public class UnitMovement : MonoBehaviour
 {
     public GameObject path;
+    private GameObject currentPath;
+    public GameObject explosion;
     private List<Vector3> waypoints;
     private int currentWaypointIndex = 0;
     private float moveSpeed;
@@ -12,7 +14,7 @@ public class UnitMovement : MonoBehaviour
     public List<Vector3> GetWaypoints()
     {
         // Instantiate path at unit's position
-        GameObject currentPath = Instantiate(path, transform.position, path.transform.rotation);
+        currentPath = Instantiate(path, transform.position, path.transform.rotation);
 
         // Declare new waypoint list (to return)
         List<Vector3> waypoints = new List<Vector3>();
@@ -70,7 +72,7 @@ public class UnitMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 destination,
-                moveSpeed * Time.deltaTime);
+                moveSpeed / 8 * Time.deltaTime);
 
             // once position equal to "destination"
             if (transform.position == destination)
@@ -100,21 +102,23 @@ public class UnitMovement : MonoBehaviour
             // reset current wp index
             currentWaypointIndex = 0;
         }
-        /*
-        else die fr
-            delete instance of path
-        */
-
     }
 
 
     // On Projectile Hit
     void OnTriggerEnter2D(Collider2D col)
     {
+        print(col.tag);
         if (col.tag == "DefenderProjectile")
         {
             //float str = col.GameObject<ProjectileStat>().GetStrengh();
             //GetComponent<UnitStatManager>().DecrementHealth(str);
+        }
+        else if (col.tag == "Settlement")
+        {
+            Instantiate(explosion, transform.position, explosion.transform.rotation);
+            Destroy(gameObject);
+            Destroy(currentPath);
         }
     }
 }

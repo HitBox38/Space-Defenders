@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitShoot : MonoBehaviour
 {
     // Stats
-    private float strength, projSpeed, fireRate, projLifespan;
+    private float strength, fireRate;
 
     [SerializeField]
     private GameObject projectile;
@@ -15,9 +15,7 @@ public class UnitShoot : MonoBehaviour
     void Start()
     {
         strength = GetComponent<UnitStatManager>().GetStrength();
-        projSpeed = GetComponent<UnitStatManager>().GetProjSpeed();
         fireRate = GetComponent<UnitStatManager>().GetFireRate();
-        projLifespan = GetComponent<UnitStatManager>().GetLifeSpan();
     }
 
     // Update is called once per frame
@@ -27,11 +25,15 @@ public class UnitShoot : MonoBehaviour
         TimeT += Time.deltaTime;
 
         // Shoot
-        if (TimeT > fireRate)
+        if (fireRate > 0)
         {
-            GameObject unitProjectile = Instantiate(projectile, transform.position, projectile.transform.rotation);
-            unitProjectile.GetComponent<ProjectileManager>().SetStats(strength, projSpeed, projLifespan);
-            TimeT = 0;
+            if (TimeT > fireRate / 8)
+            {
+                // Summon Projectile
+                GameObject unitProjectile = Instantiate(projectile, transform.position + new Vector3(0, 0.5f, 0), projectile.transform.rotation);
+                unitProjectile.GetComponent<ProjectileManager>().SetStats(strength);
+                TimeT = 0;
+            }
         }
     }
 }

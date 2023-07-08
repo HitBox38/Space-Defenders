@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitStatManager : MonoBehaviour
 {
     [SerializeField]
-    private float health, speed, strength, cost, projSpeed, fireRate, projLifespan;
+    private float health, speed, strength, kamikaze, cost, fireRate;
 
 
     // Return speed to UnitMovement.cs
@@ -14,22 +14,10 @@ public class UnitStatManager : MonoBehaviour
         return speed;
     }
 
-    // Return proj speed to UnitShoot
-    public float GetProjSpeed()
-    {
-        return projSpeed;
-    }
-
     // Return fire rate to UnitShoot
     public float GetFireRate()
     {
         return fireRate;
-    }
-
-    // Return proj lifespan to UnitShoot
-    public float GetLifeSpan()
-    {
-        return projLifespan;
     }
 
     // Return strength to UnitShoot
