@@ -545,14 +545,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 913571419651633590, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 35.650867
-      objectReference: {fileID: 0}
-    - target: {fileID: 913571419651633590, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5511
-      objectReference: {fileID: 0}
     - target: {fileID: 913571420305877500, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_Name
       value: Settlement
@@ -600,30 +592,6 @@ PrefabInstance:
     - target: {fileID: 913571420305877502, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_Size.x
-      value: 35.217056
-      objectReference: {fileID: 0}
-    - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_Size.y
-      value: 2.0281677
-      objectReference: {fileID: 0}
-    - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.056552887
-      objectReference: {fileID: 0}
-    - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_Offset.y
-      value: 8.917761
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842575031890223274, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842575031890223274, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
