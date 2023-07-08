@@ -28,7 +28,16 @@ public class DebrisManager : MonoBehaviour
             }
         }
 
+    }
+
+    void OnEnable()
+    {
         DebrisMovement.OnDebrisLeave += DecrementDebris;
+    }
+
+    void OnDisable()
+    {
+        DebrisMovement.OnDebrisLeave -= DecrementDebris;
     }
 
     public void DecrementDebris()

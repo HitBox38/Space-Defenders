@@ -50,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.59
 --- !u!50 &7114936943535781691
 Rigidbody2D:
   serializedVersion: 4
@@ -96,7 +96,7 @@ MonoBehaviour:
   playerShipsLayers:
     serializedVersion: 2
     m_Bits: 64
-  playerShipDetectorRadius: 7.5
+  playerShipDetectorRadius: 18
 --- !u!1 &7114936944738145835
 GameObject:
   m_ObjectHideFlags: 0

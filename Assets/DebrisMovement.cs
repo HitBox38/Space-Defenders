@@ -8,12 +8,13 @@ public class DebrisMovement : MonoBehaviour
     // Update is called once per frame
     public GameObject explosion;
     public static event Action OnDebrisLeave;
+    public static event Action<Vector3> OnDebrisCrash;
 
     private float verticalOrientation;
 
     void Start()
     {
-        verticalOrientation = UnityEngine.Random.Range(-0.2f, 0.2f);
+        verticalOrientation = UnityEngine.Random.Range(-0.1f, 0.1f);
     }
     void Update()
     {
@@ -31,6 +32,7 @@ public class DebrisMovement : MonoBehaviour
     {
         if (coll.tag == "Unit")
         {
+            OnDebrisCrash?.Invoke(transform.position);
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(coll.gameObject);
             Destroy(coll.GetComponent<UnitMovement>().GetCurrentPath());

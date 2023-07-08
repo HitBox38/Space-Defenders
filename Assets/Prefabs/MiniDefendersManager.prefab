@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &423409009321856450
+--- !u!1 &2106071292772998697
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 423409009321856448}
-  - component: {fileID: 423409009321856449}
+  - component: {fileID: 2106071292772998699}
+  - component: {fileID: 2106071292772998696}
   m_Layer: 0
-  m_Name: DebrisManager
+  m_Name: MiniDefendersManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &423409009321856448
+--- !u!4 &2106071292772998699
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423409009321856450}
+  m_GameObject: {fileID: 2106071292772998697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8377001, y: 0.63351864, z: 0.025435822}
+  m_LocalPosition: {x: -1.0424428, y: -0.034109533, z: -0.0492564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &423409009321856449
+--- !u!114 &2106071292772998696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423409009321856450}
+  m_GameObject: {fileID: 2106071292772998697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9837bfeec71d1d04f86f9db3e954d02d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d0e8c115ef15394ead6744dcd9ada96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debris:
-  - {fileID: 8391252939610321878, guid: 16b44c7a1a68f1e48ba76952e8becbbe, type: 3}
-  - {fileID: 8391252939610321878, guid: 0ea2fac6a79047545a2dca98f90ce269, type: 3}
-  - {fileID: 8391252939610321878, guid: 2fc714a85a94f0641990eea0acbfa178, type: 3}
+  miniDefender: {fileID: 6766452365537515011, guid: 194239264c8f8ed46affbf786f7ecd28, type: 3}

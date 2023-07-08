@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7819188680272883451, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: m_Radius
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5331388740614130846, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: cost
       value: 70
@@ -42,6 +46,14 @@ PrefabInstance:
     - target: {fileID: 8219347418239440972, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219347418239440972, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219347418239440972, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8219347418239440972, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -96,6 +108,10 @@ PrefabInstance:
       value: Unit Large
       objectReference: {fileID: 0}
     - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: cost
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: speed
       value: 20
       objectReference: {fileID: 0}
@@ -105,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: fireRate
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: kamikaze

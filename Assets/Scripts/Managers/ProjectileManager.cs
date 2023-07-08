@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
-    private float strength;
+    private int strength;
 
     [SerializeField]
     private GameObject explosion;
@@ -12,9 +12,14 @@ public class ProjectileManager : MonoBehaviour
     private float TimeT;
 
     // Set strength from UnitStatManager
-    public void SetStats(float str)
+    public void SetStats(int str)
     {
         strength = str;
+    }
+
+    public int GetStrength()
+    {
+        return strength;
     }
 
     // Update is called once per frame

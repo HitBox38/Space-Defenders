@@ -5,7 +5,8 @@ using UnityEngine;
 public class UnitShoot : MonoBehaviour
 {
     // Stats
-    private float strength, fireRate;
+    private float fireRate;
+    private int strength;
 
     [SerializeField]
     private GameObject projectile;

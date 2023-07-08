@@ -38,6 +38,11 @@ public class DefenderManager : MonoBehaviour
     private void Update()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, defenderAngle), rotationSpeed * Time.deltaTime);
+
+        if (DefenderHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator ChooseWhereToAim()
@@ -102,6 +107,20 @@ public class DefenderManager : MonoBehaviour
     public void DamageDefender(int damage)
     {
         DefenderHealth -= damage;
+    }
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.tag == "UnitProjectile")
+        {
+            int str = coll.gameObject.GetComponent<ProjectileManager>().GetStrength();
+            DamageDefender(str);
+        }
+        else if (coll.tag == "Unit")
+        {
+            int str = (int)coll.gameObject.GetComponent<UnitStatManager>().GetKamikaze();
+            DamageDefender(str);
+        }
     }
 
 #if UNITY_EDITOR
