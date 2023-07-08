@@ -69,7 +69,7 @@ public class UI : MonoBehaviour
 
     private IEnumerator MoveUnitsUI(Transform toMove, Vector3 position)
     {
-        while(!V3AlmostEqual(toMove.localPosition, position, 0.005f))
+        while(!V3AlmostEqual(toMove.localPosition, position, 0.05f))
         {
             yield return new WaitForEndOfFrame();
             toMove.localPosition = Vector3.Lerp(toMove.localPosition, position, UIOpenSpeed * Time.deltaTime);
