@@ -32,7 +32,7 @@ public class WaveManager : MonoBehaviour
     public void PurchaseSmall()
     {
         int asInt = int.Parse(moneyDisplay.text);
-        if (asInt > 15)
+        if (asInt >= 15)
         {
             OnPurchase?.Invoke(15);
             asInt = int.Parse(smallCount.text);
@@ -45,7 +45,7 @@ public class WaveManager : MonoBehaviour
     public void PurchaseMedium()
     {
         int asInt = int.Parse(moneyDisplay.text);
-        if (asInt > 45)
+        if (asInt >= 45)
         {
             OnPurchase?.Invoke(45);
             asInt = int.Parse(mediumCount.text);
@@ -58,7 +58,7 @@ public class WaveManager : MonoBehaviour
     public void PurchaseLarge()
     {
         int asInt = int.Parse(moneyDisplay.text);
-        if (asInt > 70)
+        if (asInt >= 70)
         {
             OnPurchase?.Invoke(70);
             asInt = int.Parse(largeCount.text);

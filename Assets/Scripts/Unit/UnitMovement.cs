@@ -130,5 +130,9 @@ public class UnitMovement : MonoBehaviour
             Destroy(gameObject);
             Destroy(currentPath);
         }
+        else if (col.tag == "Collectible")
+        {
+
+        }
     }
 }

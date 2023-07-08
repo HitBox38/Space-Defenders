@@ -23,11 +23,30 @@ public class MiniDefenderManager : MonoBehaviour
 
     void SummonMiniDefender()
     {
-        float min, max;
-        min = settlementPos.bounds.min.x;
-        max = settlementPos.bounds.max.x;
+        float min = settlementPos.bounds.min.x;
+        float max = settlementPos.bounds.max.x;
+        Vector3 newPos;
+        bool isPositionFree;
 
-        Instantiate(miniDefender, new Vector3(UnityEngine.Random.Range(min, max), settlementPos.bounds.center.y, 0), miniDefender.transform.rotation);
+        do
+        {
+            newPos = new Vector3(UnityEngine.Random.Range(min, max), settlementPos.bounds.center.y, 0);
+            Collider[] intersectingObjects = Physics.OverlapSphere(newPos, miniDefender.GetComponent<CircleCollider2D>().radius + .5f);
+
+            isPositionFree = true;
+            foreach (Collider collider in intersectingObjects)
+            {
+                if (collider.gameObject.tag == "Defender")
+                {
+                    isPositionFree = false;
+                    break;
+                }
+            }
+
+        } while (!isPositionFree);
+
+        Instantiate(miniDefender, newPos, miniDefender.transform.rotation);
     }
+
 
 }
