@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit Large
       objectReference: {fileID: 0}
+    - target: {fileID: 6191593779999599841, guid: c0a3af051ca5d7f43bc99ab40ca71a61, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6191593779999599842, guid: c0a3af051ca5d7f43bc99ab40ca71a61, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -369,6 +373,10 @@ PrefabInstance:
     - target: {fileID: 1308631456677133813, guid: 39f54a831cebf2f41a1b7cf2096789ae, type: 3}
       propertyPath: m_Name
       value: Unit Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308631456677133813, guid: 39f54a831cebf2f41a1b7cf2096789ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1308631456677133814, guid: 39f54a831cebf2f41a1b7cf2096789ae, type: 3}
       propertyPath: m_RootOrder

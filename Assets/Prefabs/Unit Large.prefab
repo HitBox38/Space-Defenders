@@ -95,5 +95,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Unit Large
       objectReference: {fileID: 0}
+    - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: health
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: fireRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: kamikaze
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 9006153549971380703, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
+      propertyPath: strength
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e02e06c5074e21428373c40787fed92, type: 3}

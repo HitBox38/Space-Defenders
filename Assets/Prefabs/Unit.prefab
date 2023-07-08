@@ -98,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8219347418239440975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb842c4faa71b924bbb0c25bcac2a55b, type: 3}
+  m_Script: {fileID: 11500000, guid: 258c15808336d36479b91d002895b8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 4922621141834788688, guid: 82993f577f603c34fa83a4055d83be90, type: 3}
@@ -133,14 +133,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8219347418239440975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ce48e434b723543b442ff675730048, type: 3}
+  m_Script: {fileID: 11500000, guid: 78c8772334f84d34f9d8f2dadc523407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
-  speed: 40
-  strength: 5
-  kamikaze: 15
-  fireRate: 30
+  projectile: {fileID: 2363111452964653131, guid: 7e0d3c85b340b7c4f8bc58462ac7900e, type: 3}
 --- !u!58 &-7819188680272883451
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -166,7 +162,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8219347418239440975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a696e9333a2bef940ba381ab2364e5c6, type: 3}
+  m_Script: {fileID: 11500000, guid: af15f63b43bc2734f8884a1cbe0cf41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2363111452964653131, guid: 7e0d3c85b340b7c4f8bc58462ac7900e, type: 3}
+  health: 40
+  speed: 40
+  strength: 5
+  kamikaze: 15
+  fireRate: 30
