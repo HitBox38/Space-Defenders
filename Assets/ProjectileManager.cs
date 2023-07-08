@@ -20,7 +20,7 @@ public class ProjectileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, 0.5f, 0);
+        transform.position += new Vector3(0, 0.1f, 0);
 
         // Increment time by deltaTime
         TimeT += Time.deltaTime;
@@ -38,6 +38,8 @@ public class ProjectileManager : MonoBehaviour
     {
         if (col.tag == "Settlement")
         {
+            col.gameObject.GetComponent<SettlementManager>().DecrementHealth(strength);
+
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
         }

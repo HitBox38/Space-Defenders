@@ -115,6 +115,8 @@ public class UnitMovement : MonoBehaviour
         }
         else if (col.tag == "Settlement")
         {
+            col.gameObject.GetComponent<SettlementManager>().DecrementHealth(GetComponent<UnitStatManager>().GetKamikaze());
+
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
             Destroy(currentPath);

@@ -25,6 +25,11 @@ public class UnitStatManager : MonoBehaviour
     {
         return strength;
     }
+    // Return kamikaze to unit movement
+    public float GetKamikaze()
+    {
+        return kamikaze;
+    }
 
     // Return cost to currently unnamed unit shop manager
     public float GetCost()
