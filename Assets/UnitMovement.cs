@@ -108,7 +108,6 @@ public class UnitMovement : MonoBehaviour
     // On Projectile Hit
     void OnTriggerEnter2D(Collider2D col)
     {
-        print(col.tag);
         if (col.tag == "DefenderProjectile")
         {
             //float str = col.GameObject<ProjectileStat>().GetStrengh();

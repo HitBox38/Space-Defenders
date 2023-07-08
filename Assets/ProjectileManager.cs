@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     private float strength;
+
+    [SerializeField]
+    private GameObject explosion;
 
     private float TimeT;
 
@@ -23,9 +25,20 @@ public class ProjectileManager : MonoBehaviour
         // Increment time by deltaTime
         TimeT += Time.deltaTime;
 
-        // Shoot
+        // Die after 4 seconds
         if (TimeT > 4)
         {
+            Destroy(gameObject);
+        }
+    }
+
+
+    // On Projectile Hit
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Settlement")
+        {
+            Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
         }
     }

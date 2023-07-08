@@ -10,8 +10,10 @@ public class ExplosionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // increment time
         TimeT += Time.deltaTime;
 
+        // once time is over 1 destroy explosion instance
         if (TimeT > 1)
         {
             Destroy(gameObject);
