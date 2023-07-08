@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class UnitMovement : MonoBehaviour
@@ -10,6 +11,7 @@ public class UnitMovement : MonoBehaviour
     private List<Vector3> waypoints;
     private int currentWaypointIndex = 0;
     private float moveSpeed;
+    public static event Action<int> OnKamikaze;
 
     public List<Vector3> GetWaypoints()
     {
@@ -115,6 +117,8 @@ public class UnitMovement : MonoBehaviour
         }
         else if (col.tag == "Settlement")
         {
+            OnKamikaze?.Invoke(GetComponent<UnitStatManager>().GetCost() + 10);
+
             col.gameObject.GetComponent<SettlementManager>().DecrementHealth(GetComponent<UnitStatManager>().GetKamikaze());
 
             Instantiate(explosion, transform.position, explosion.transform.rotation);

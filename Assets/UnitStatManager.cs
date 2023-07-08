@@ -5,7 +5,8 @@ using UnityEngine;
 public class UnitStatManager : MonoBehaviour
 {
     [SerializeField]
-    private float health, speed, strength, kamikaze, cost, fireRate;
+    private float health, speed, strength, kamikaze, fireRate;
+    private int cost;
 
 
     // Return speed to UnitMovement.cs
@@ -32,7 +33,7 @@ public class UnitStatManager : MonoBehaviour
     }
 
     // Return cost to currently unnamed unit shop manager
-    public float GetCost()
+    public int GetCost()
     {
         return cost;
     }
