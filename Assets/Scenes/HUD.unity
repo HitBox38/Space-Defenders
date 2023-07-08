@@ -663,6 +663,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuelClock: {fileID: 4828043279264128523}
   fuelReducer: 0.05
+  fuelRotationSpeed: 5
+  maxFuel: 1
   currency: {fileID: 4828043279264128522}
   UIOpenSpeed: 15
 --- !u!1001 &4828043279264128520
@@ -834,14 +836,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4828043279264128523 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4132329644474234007, guid: eda1d02a1b392e34b960c25219397898, type: 3}
+--- !u!224 &4828043279264128523 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5253334310224622946, guid: eda1d02a1b392e34b960c25219397898, type: 3}
   m_PrefabInstance: {fileID: 4828043279264128520}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

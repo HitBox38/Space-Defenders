@@ -7,8 +7,10 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     [Header("Fuel UI")]
-    [SerializeField] private Image fuelClock;
+    [SerializeField] private Transform fuelClock;
     [SerializeField] private float fuelReducer = 0.05f;
+    [SerializeField] private float fuelRotationSpeed = 1f;
+    [SerializeField, Min(1)] private float maxFuel = 1f;
     [Header("Currency UI")]
     [SerializeField] private TMP_Text currency;
     [Header("UI Open Speed")]
@@ -16,6 +18,8 @@ public class UI : MonoBehaviour
 
     private Coroutine unitsMoveCo;
     private Vector3 UISreenPosition;
+    private float fuel = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +27,28 @@ public class UI : MonoBehaviour
         StartCoroutine(ReduceFillAmountOverTime());
     }
 
+    private void Update()
+    {
+        float fuelIndicatorAngle = (fuel - 0) * (90 - (-90)) / (maxFuel - 0) + (-90);
+        fuelClock.rotation = Quaternion.Lerp(fuelClock.rotation, Quaternion.Euler(0, 0, -fuelIndicatorAngle), Time.deltaTime * fuelRotationSpeed);
+    }
+
     // Coroutine to reduce fillAmount over time
     IEnumerator ReduceFillAmountOverTime()
     {
-        while (fuelClock.fillAmount > 0)
+        fuel = maxFuel;
+        while (fuel > 0)
         {
-            fuelClock.fillAmount -= fuelReducer * Time.deltaTime;
-            if (fuelClock.fillAmount == .75f)
+            fuel -= fuelReducer * Time.deltaTime;
+            if (fuel == .75f)
             {
                 Debug.Log("at 75%");
             }
-            else if (fuelClock.fillAmount == .5f)
+            else if (fuel == .5f)
             {
                 Debug.Log("at 50%");
             }
-            else if (fuelClock.fillAmount == .25f)
+            else if (fuel == .25f)
             {
                 Debug.Log("at 25%");
             }
