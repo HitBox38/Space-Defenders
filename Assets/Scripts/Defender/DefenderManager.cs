@@ -25,6 +25,7 @@ public class DefenderManager : MonoBehaviour
 
     private Vector2 projectileDirection = Vector2.down;
     private float defenderAngle = 0;
+    private bool playerSeen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +44,15 @@ public class DefenderManager : MonoBehaviour
     {
         Collider2D[] playerShips = Physics2D.OverlapCircleAll(transform.position,
             playerShipDetectorRadius, playerShipsLayers);
-        if(playerShips.Length > 0)
+        if (playerShips.Length > 0)
         {
+            playerSeen = true;
             Transform shipToFollow = FindClosestShip(playerShips).transform;
             projectileDirection = (shipToFollow.position - transform.position).normalized;
         }
         else
         {
+            playerSeen = false;
             projectileDirection = Vector2.down;
         }
         defenderAngle = Mathf.Atan2(projectileDirection.y, projectileDirection.x) * Mathf.Rad2Deg - 90;
@@ -60,15 +63,15 @@ public class DefenderManager : MonoBehaviour
     private Collider2D FindClosestShip(Collider2D[] ships)
     {
         Collider2D closestShip = null;
-        foreach(Collider2D ship in ships)
+        foreach (Collider2D ship in ships)
         {
-            if(closestShip == null)
+            if (closestShip == null)
             {
                 closestShip = ship;
             }
             else
             {
-                if(Vector2.Distance(transform.position, closestShip.transform.position) > 
+                if (Vector2.Distance(transform.position, closestShip.transform.position) >
                     Vector2.Distance(transform.position, ship.transform.position))
                 {
                     closestShip = ship;
@@ -81,13 +84,17 @@ public class DefenderManager : MonoBehaviour
     private IEnumerator DefenderShooting()
     {
         yield return new WaitForSeconds(timeBetweenShots);
-        for(int i = 0; i < fireRate; i++)
+
+        if (playerSeen)
         {
-            yield return new WaitForSeconds(timeBetweenFireRateShots);
-            GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + projectileDirection, Quaternion.identity);
-            projectile.transform.eulerAngles = new Vector3(0, 0, defenderAngle);
-            projectile.GetComponent<Rigidbody2D>().AddForce(projectileDirection * projectileSpeed);
-            Destroy(projectile, projectileLifespan);
+            for (int i = 0; i < fireRate; i++)
+            {
+                yield return new WaitForSeconds(timeBetweenFireRateShots);
+                GameObject projectile = Instantiate(projectilePrefab, (Vector2)transform.position + projectileDirection, Quaternion.identity);
+                projectile.transform.eulerAngles = new Vector3(0, 0, defenderAngle);
+                projectile.GetComponent<Rigidbody2D>().AddForce(projectileDirection * projectileSpeed);
+                Destroy(projectile, projectileLifespan);
+            }
         }
         StartCoroutine(DefenderShooting());
     }

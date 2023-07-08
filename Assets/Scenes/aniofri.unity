@@ -319,11 +319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6191593779999599842, guid: c0a3af051ca5d7f43bc99ab40ca71a61, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 15.15
       objectReference: {fileID: 0}
     - target: {fileID: 6191593779999599842, guid: c0a3af051ca5d7f43bc99ab40ca71a61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.1
+      value: -8.97
       objectReference: {fileID: 0}
     - target: {fileID: 6191593779999599842, guid: c0a3af051ca5d7f43bc99ab40ca71a61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -427,6 +427,10 @@ PrefabInstance:
       propertyPath: reAimTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7114936943535781688, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
+      propertyPath: playerShipDetectorRadius
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 7114936943535781689, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -484,6 +488,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 913571419651633590, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 35.650867
+      objectReference: {fileID: 0}
+    - target: {fileID: 913571419651633590, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5511
+      objectReference: {fileID: 0}
     - target: {fileID: 913571420305877500, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_Name
       value: Settlement
@@ -531,6 +543,14 @@ PrefabInstance:
     - target: {fileID: 913571420305877502, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+      propertyPath: m_Size.x
+      value: 35.64937
+      objectReference: {fileID: 0}
+    - target: {fileID: 913571420305877503, guid: df7561e15bb0f23489869766b467ff1f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5197439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7561e15bb0f23489869766b467ff1f, type: 3}

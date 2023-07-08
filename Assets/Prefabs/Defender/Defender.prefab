@@ -86,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   rotationSpeed: 25
-  reAimTime: 0.25
-  fireRate: 1
+  reAimTime: 0.1
+  fireRate: 5
   timeBetweenShots: 1.5
   timeBetweenFireRateShots: 0.15
   projectilePrefab: {fileID: 2187471707674984376, guid: d91e243f4eac7bc44acce06c7c1a407a, type: 3}
