@@ -7,7 +7,7 @@ public class UnitMovement : MonoBehaviour
     public GameObject path;
     private List<Vector3> waypoints;
     private int currentWaypointIndex = 0;
-    private float moveSpeed = 2f;
+    private float moveSpeed;
 
     public List<Vector3> GetWaypoints()
     {
@@ -30,9 +30,11 @@ public class UnitMovement : MonoBehaviour
 
     public void SetFollowParams(List<Vector3> points, float speed)
     {
+        // Set initial position
         waypoints = points;
         transform.position = waypoints[0];
 
+        // Set speed
         moveSpeed = speed;
     }
 
@@ -43,41 +45,59 @@ public class UnitMovement : MonoBehaviour
 
     private void Start()
     {
-        //path = GetPath();
-        SetFollowParams(GetWaypoints(), 2f);
+        // Get speed from unit stat manager
+        float speed = GetComponent<UnitStatManager>().GetSpeed();
+
+        // Set params
+        SetFollowParams(GetWaypoints(), speed);
     }
 
     private void Update()
     {
+        // follow path.......
         FollowPath();
     }
 
     private void FollowPath()
     {
+        // If not arrived at the end of the path
         if (currentWaypointIndex < waypoints.Count)
         {
+            // get next wp position "destination"
             Vector3 destination = waypoints[currentWaypointIndex];
 
+            // move towards "destination"
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 destination,
                 moveSpeed * Time.deltaTime);
 
+            // once position equal to "destination"
             if (transform.position == destination)
             {
+                // increment current wp index
                 currentWaypointIndex++;
             }
         }
         else
         {
+            // Declare an empty wps list
             List<Vector3> newWps = new List<Vector3>();
+
+            // iterate over wps
             for (int i = 0; i < waypoints.Count; i++)
             {
+                // get the distance between the last wp and the first one
                 float distance = Vector3.Distance(waypoints[waypoints.Count - 1], waypoints[0]);
+
+                // add the distance to each wp and append it to the list
                 newWps.Add(waypoints[i] + new Vector3(0, distance, 0));
             }
+
+            // equal prev waypoints list to the new one 
             waypoints = newWps;
 
+            // reset current wp index
             currentWaypointIndex = 0;
         }
         /*
@@ -85,5 +105,16 @@ public class UnitMovement : MonoBehaviour
             delete instance of path
         */
 
+    }
+
+
+    // On Projectile Hit
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "DefenderProjectile")
+        {
+            //float str = col.GameObject<ProjectileStat>().GetStrengh();
+            //GetComponent<UnitStatManager>().DecrementHealth(str);
+        }
     }
 }
