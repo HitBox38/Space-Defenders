@@ -42,4 +42,13 @@ public class UnitStatManager : MonoBehaviour
     {
         health -= projStr;
     }
+
+    void Update()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Destroy(GetComponent<UnitMovement>().GetCurrentPath());
+        }
+    }
 }

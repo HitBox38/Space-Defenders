@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5331388740614130846}
   - component: {fileID: -7819188680272883451}
   - component: {fileID: 9006153549971380703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unit
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -140,7 +140,6 @@ MonoBehaviour:
   speed: 40
   strength: 5
   kamikaze: 15
-  cost: 45
   fireRate: 30
 --- !u!58 &-7819188680272883451
 CircleCollider2D:

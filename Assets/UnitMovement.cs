@@ -13,6 +13,10 @@ public class UnitMovement : MonoBehaviour
     private float moveSpeed;
     public static event Action<int> OnKamikaze;
 
+    public GameObject GetCurrentPath()
+    {
+        return currentPath;
+    }
     public List<Vector3> GetWaypoints()
     {
         // Instantiate path at unit's position
@@ -112,8 +116,9 @@ public class UnitMovement : MonoBehaviour
     {
         if (col.tag == "DefenderProjectile")
         {
-            //float str = col.GameObject<ProjectileStat>().GetStrengh();
-            //GetComponent<UnitStatManager>().DecrementHealth(str);
+            float str = col.gameObject.GetComponent<ProjectileStats>().GetStrength();
+            GetComponent<UnitStatManager>().DecrementHealth(str);
+            Instantiate(explosion, transform.position, explosion.transform.rotation);
         }
         else if (col.tag == "Settlement")
         {
