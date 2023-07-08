@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unit
   - UnitProjectile
+  - Settlement
   - DefenderProjectile
   layers:
   - Default
