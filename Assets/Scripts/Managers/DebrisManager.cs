@@ -50,7 +50,7 @@ public class DebrisManager : MonoBehaviour
         yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
 
         GameObject debrisObj = debris[Random.Range(0, debris.Length)];
-        Instantiate(debrisObj, new Vector3(20, Random.Range(-6, 6), 0), debrisObj.transform.rotation);
+        Instantiate(debrisObj, new Vector3(20, Random.Range(-2, 2), 0), debrisObj.transform.rotation);
         numOfDebris += 1;
         summonDebris = true;
     }

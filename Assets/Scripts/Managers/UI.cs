@@ -11,8 +11,6 @@ public class UI : MonoBehaviour
     [SerializeField] private float fuelReducer = 0.05f;
     [SerializeField] private float fuelRotationSpeed = 1f;
     [SerializeField, Min(1)] private float maxFuel = 1f;
-    [Header("Currency UI")]
-    [SerializeField] private TMP_Text currency;
     [Header("UI Open Speed")]
     [SerializeField] private float UIOpenSpeed = 5;
 
@@ -23,7 +21,6 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currency.text = 0.ToString();
         StartCoroutine(ReduceFillAmountOverTime());
     }
 
@@ -59,7 +56,7 @@ public class UI : MonoBehaviour
 
     public void PopUpUI(GameObject toMove)
     {
-        if(unitsMoveCo == null)
+        if (unitsMoveCo == null)
             unitsMoveCo = StartCoroutine(MoveUnitsUI(toMove.transform, UISreenPosition));
     }
 
@@ -70,7 +67,7 @@ public class UI : MonoBehaviour
 
     private IEnumerator MoveUnitsUI(Transform toMove, Vector3 position)
     {
-        while(!V3AlmostEqual(toMove.localPosition, position, 0.05f))
+        while (!V3AlmostEqual(toMove.localPosition, position, 0.05f))
         {
             yield return new WaitForEndOfFrame();
             toMove.localPosition = Vector3.Lerp(toMove.localPosition, position, UIOpenSpeed * Time.deltaTime);

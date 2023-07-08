@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 8219347418239440974, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: path
       value: 
-      objectReference: {fileID: 4922621141834788688, guid: 61749d4703be39341bbfce12f377782f, type: 3}
+      objectReference: {fileID: 4922621141834788688, guid: 36306ddb7d0184e409db42ed95b052d3, type: 3}
     - target: {fileID: 8219347418239440975, guid: 7e02e06c5074e21428373c40787fed92, type: 3}
       propertyPath: m_Name
       value: Unit Large
