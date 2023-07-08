@@ -39,16 +39,17 @@ public class UI : MonoBehaviour
         fuel = maxFuel;
         while (fuel > 0)
         {
-            fuel -= fuelReducer * Time.deltaTime;
-            if (fuel == .75f)
+            float toReduce = fuelReducer * Time.deltaTime;
+            fuel -= toReduce;
+            if (fuel >= (.75f - toReduce) && fuel <= (.75f + toReduce))
             {
                 Debug.Log("at 75%");
             }
-            else if (fuel == .5f)
+            else if (fuel >= (.5f - toReduce) && fuel <= (.5f + toReduce))
             {
                 Debug.Log("at 50%");
             }
-            else if (fuel == .25f)
+            else if (fuel >= (.25f - toReduce) && fuel <= (.25f + toReduce))
             {
                 Debug.Log("at 25%");
             }
