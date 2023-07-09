@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class StrengthBuffCol : MonoBehaviour
 {
+
+    private Collider2D col;
+    private SpriteRenderer sr;
+
+    private GameObject[] units;
+
+    private void Awake()
+    {
+        col = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Unit")
@@ -15,20 +27,21 @@ public class StrengthBuffCol : MonoBehaviour
     IEnumerator buffStrength(GameObject colUnit)
     {
         enabled = false;
-        ModifyStat(colUnit, 2);
+        col.enabled = false;
+        sr.enabled = false;
+
+        units = GameObject.FindGameObjectsWithTag("Unit");
+        ModifyStat(2);
 
         yield return new WaitForSeconds(2);
-
-        ModifyStat(colUnit, .5f);
+        units = GameObject.FindGameObjectsWithTag("Unit");
+        //ModifyStat(.5f);
 
         Destroy(gameObject);
     }
 
-    private void ModifyStat(GameObject colUnit, float amount)
+    private void ModifyStat(float amount)
     {
-        GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
-
-        colUnit.GetComponent<UnitStatManager>().ChangeStrength(amount);
         foreach (GameObject unit in units)
         {
             unit.GetComponent<UnitShoot>().ChangeStrength(amount);

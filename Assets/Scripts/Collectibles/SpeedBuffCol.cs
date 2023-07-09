@@ -3,6 +3,18 @@ using UnityEngine;
 
 public class SpeedBuffCol : MonoBehaviour
 {
+
+    private Collider2D col;
+    private SpriteRenderer sr;
+
+    private GameObject[] units;
+
+    private void Awake()
+    {
+        col = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Unit")
@@ -14,20 +26,20 @@ public class SpeedBuffCol : MonoBehaviour
     IEnumerator buffSpeed(GameObject colUnit)
     {
         enabled = false;
-        ModifyStat(colUnit, +10f);
+        col.enabled = false;
+        sr.enabled = false;
+        units = GameObject.FindGameObjectsWithTag("Unit");
+        ModifyStat(+100f);
 
         yield return new WaitForSeconds(2);
-
-        ModifyStat(colUnit, -10f);
+        units = GameObject.FindGameObjectsWithTag("Unit");
+        //ModifyStat(-100f);
 
         Destroy(gameObject);
     }
 
-    private void ModifyStat(GameObject colUnit, float amount)
+    private void ModifyStat(float amount)
     {
-        GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
-
-        colUnit.GetComponent<UnitStatManager>().ChangeSpeed(amount);
         foreach (GameObject unit in units)
         {
             unit.GetComponent<UnitMovement>().ChangeSpeed(amount);

@@ -19,7 +19,7 @@ public class CollectiblesManager : MonoBehaviour
 
     void summonCollectible(Vector3 position)
     {
-        GameObject toSummon = collectibles[UnityEngine.Random.Range(0, collectibles.Length - 1)];
+        GameObject toSummon = collectibles[UnityEngine.Random.Range(0, collectibles.Length)];
         Instantiate(toSummon, position, toSummon.transform.rotation);
     }
     // Update is called once per frame
