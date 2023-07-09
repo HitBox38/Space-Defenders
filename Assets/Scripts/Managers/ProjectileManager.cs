@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class ProjectileManager : MonoBehaviour
     private GameObject explosion;
 
     private float TimeT;
+    public static event Action<int> OnSettlementShoot;
 
     // Set strength from UnitStatManager
     public void SetStats(int str)
@@ -41,6 +43,7 @@ public class ProjectileManager : MonoBehaviour
     // On Projectile Hit
     void OnTriggerEnter2D(Collider2D col)
     {
+        OnSettlementShoot?.Invoke(5);
         if (col.tag == "Settlement")
         {
             col.gameObject.GetComponent<SettlementManager>().DecrementHealth(strength);
