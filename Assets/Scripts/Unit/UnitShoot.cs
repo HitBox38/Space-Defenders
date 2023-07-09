@@ -28,7 +28,7 @@ public class UnitShoot : MonoBehaviour
         // Shoot
         if (fireRate > 0)
         {
-            if (TimeT > fireRate / 8)
+            if (TimeT > fireRate / 16)
             {
                 // Summon Projectile
                 GameObject unitProjectile = Instantiate(projectile, transform.position + new Vector3(0, 0.5f, 0), projectile.transform.rotation);

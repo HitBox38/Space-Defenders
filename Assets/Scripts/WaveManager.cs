@@ -12,13 +12,15 @@ public class WaveManager : MonoBehaviour
 
     [SerializeField] private GameObject[] units;
 
-    [SerializeField] private BoxCollider2D spawnerPos;
-    private Wave currentWave;
+    [SerializeField]
+    private GameObject[] paths;
 
+    [SerializeField] private BoxCollider2D spawnerPos;
+    private Wave currentWave = new Wave();
     public static event Action<int> OnPurchase;
     void Start()
     {
-
+        currentWave.SelectedPath(paths[0]);
     }
 
     // Update is called once per frame
@@ -36,7 +38,9 @@ public class WaveManager : MonoBehaviour
             asInt = int.Parse(smallCount.text);
             smallCount.text = (asInt + 1).ToString();
 
-            Instantiate(units[0], getRandomPosition(), Quaternion.identity);
+            GameObject currentUnit = Instantiate(units[0], getRandomPosition(), Quaternion.identity);
+            currentWave.AppendUnit(currentUnit);
+            currentUnit.GetComponent<UnitMovement>().SetPath(currentWave.getPath());
         }
     }
 
@@ -49,7 +53,9 @@ public class WaveManager : MonoBehaviour
             asInt = int.Parse(mediumCount.text);
             mediumCount.text = (asInt + 1).ToString();
 
-            Instantiate(units[1], getRandomPosition(), Quaternion.identity);
+            GameObject currentUnit = Instantiate(units[1], getRandomPosition(), Quaternion.identity);
+            currentWave.AppendUnit(currentUnit);
+            currentUnit.GetComponent<UnitMovement>().SetPath(currentWave.getPath());
         }
     }
 
@@ -62,7 +68,9 @@ public class WaveManager : MonoBehaviour
             asInt = int.Parse(largeCount.text);
             largeCount.text = (asInt + 1).ToString();
 
-            Instantiate(units[2], getRandomPosition(), Quaternion.identity);
+            GameObject currentUnit = Instantiate(units[2], getRandomPosition(), Quaternion.identity);
+            currentWave.AppendUnit(currentUnit);
+            currentUnit.GetComponent<UnitMovement>().SetPath(currentWave.getPath());
         }
     }
 
@@ -72,6 +80,21 @@ public class WaveManager : MonoBehaviour
         min = spawnerPos.bounds.min.x;
         max = spawnerPos.bounds.max.x;
 
-        return new Vector3(UnityEngine.Random.Range(min, max), spawnerPos.bounds.center.y, 0);
+        return new Vector3(UnityEngine.Random.Range(min, max), spawnerPos.bounds.center.y - 1, 0);
+    }
+
+    public void SelectLoopy()
+    {
+        currentWave.SelectedPath(paths[1]);
+    }
+
+    public void SelectCurvy()
+    {
+        currentWave.SelectedPath(paths[2]);
+    }
+
+    public void SelectZigzag()
+    {
+        currentWave.SelectedPath(paths[0]);
     }
 }

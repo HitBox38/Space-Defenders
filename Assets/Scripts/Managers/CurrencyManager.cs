@@ -20,12 +20,14 @@ public class CurrencyManager : MonoBehaviour
     }
     void OnEnable()
     {
+        ProjectileManager.OnSettlementShoot += IncrementCurrency;
         UnitMovement.OnKamikaze += IncrementCurrency;
         WaveManager.OnPurchase += DecrementCurrency;
     }
 
     void OnDisable()
     {
+        ProjectileManager.OnSettlementShoot -= IncrementCurrency;
         UnitMovement.OnKamikaze -= IncrementCurrency;
         WaveManager.OnPurchase -= DecrementCurrency;
     }

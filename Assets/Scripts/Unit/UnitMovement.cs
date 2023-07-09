@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class UnitMovement : MonoBehaviour
 {
-    public GameObject path;
     private GameObject currentPath;
     public GameObject explosion;
     private List<Vector3> waypoints;
@@ -17,7 +16,7 @@ public class UnitMovement : MonoBehaviour
     {
         return currentPath;
     }
-    public List<Vector3> GetWaypoints()
+    public List<Vector3> GetWaypoints(GameObject path)
     {
         // Instantiate path at unit's position
         currentPath = Instantiate(path, transform.position, path.transform.rotation);
@@ -45,19 +44,13 @@ public class UnitMovement : MonoBehaviour
         // Set speed
         moveSpeed = speed;
     }
-
-    /*private GameObject GetPath()
-    {
-        // Find path in scene
-    }*/
-
-    private void Start()
+    public void SetPath(GameObject wavePath)
     {
         // Get speed from unit stat manager
         float speed = GetComponent<UnitStatManager>().GetSpeed();
 
         // Set params
-        SetFollowParams(GetWaypoints(), speed);
+        SetFollowParams(GetWaypoints(wavePath), speed);
     }
 
     private void Update()
