@@ -16,7 +16,9 @@ public class UI : MonoBehaviour
 
     private Coroutine unitsMoveCo;
     private Vector3 UISreenPosition;
-    private float fuel = 1f;
+    private float _fuel = 1f;
+
+    public float fuel => _fuel;
 
     // Start is called before the first frame update
     void Start()
@@ -26,27 +28,33 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
-        float fuelIndicatorAngle = (fuel - 0) * (90 - (-90)) / (maxFuel - 0) + (-90);
+        float fuelIndicatorAngle = (_fuel - 0) * (90 - (-90)) / (maxFuel - 0) + (-90);
         fuelClock.rotation = Quaternion.Lerp(fuelClock.rotation, Quaternion.Euler(0, 0, -fuelIndicatorAngle), Time.deltaTime * fuelRotationSpeed);
+
+        if (_fuel == 0)
+        {
+
+            // go to game over screen
+        }
     }
 
     // Coroutine to reduce fillAmount over time
     IEnumerator ReduceFillAmountOverTime()
     {
-        fuel = maxFuel;
-        while (fuel > 0)
+        _fuel = maxFuel;
+        while (_fuel > 0)
         {
             float toReduce = fuelReducer * Time.deltaTime;
-            fuel -= toReduce;
-            if (fuel >= (.75f - toReduce) && fuel <= (.75f + toReduce))
+            _fuel -= toReduce;
+            if (_fuel >= (.75f - toReduce) && _fuel <= (.75f + toReduce))
             {
                 Debug.Log("at 75%");
             }
-            else if (fuel >= (.5f - toReduce) && fuel <= (.5f + toReduce))
+            else if (_fuel >= (.5f - toReduce) && _fuel <= (.5f + toReduce))
             {
                 Debug.Log("at 50%");
             }
-            else if (fuel >= (.25f - toReduce) && fuel <= (.25f + toReduce))
+            else if (_fuel >= (.25f - toReduce) && _fuel <= (.25f + toReduce))
             {
                 Debug.Log("at 25%");
             }

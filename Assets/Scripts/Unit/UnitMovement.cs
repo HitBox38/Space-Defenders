@@ -132,7 +132,7 @@ public class UnitMovement : MonoBehaviour
         }
         else if (col.tag == "Collectible")
         {
-
+            Destroy(col.gameObject);
         }
     }
 }

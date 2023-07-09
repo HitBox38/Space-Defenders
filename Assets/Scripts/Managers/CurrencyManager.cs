@@ -1,16 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class CurrencyManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text moneyDisplay;
     private int money = 100;
-    [SerializeField]
-    private TMP_Text moneyDisplay;
 
     void Start()
     {
+
+    }
+
+    private void Update()
+    {
+        if (money == 0)
+        {
+            // start counting 3 seconds and then go to game over screen
+        }
     }
     void OnEnable()
     {

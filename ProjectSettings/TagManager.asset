@@ -8,6 +8,8 @@ TagManager:
   - UnitProjectile
   - Settlement
   - DefenderProjectile
+  - Defender
+  - Collectible
   layers:
   - Default
   - TransparentFX

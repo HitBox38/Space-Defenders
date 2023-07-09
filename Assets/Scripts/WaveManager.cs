@@ -8,11 +8,9 @@ public class WaveManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField]
-    private TMP_Text smallCount, mediumCount, largeCount, moneyDisplay;
+    [SerializeField] private TMP_Text smallCount, mediumCount, largeCount, moneyDisplay;
 
-    [SerializeField]
-    private GameObject[] units;
+    [SerializeField] private GameObject[] units;
 
     [SerializeField] private BoxCollider2D spawnerPos;
     private Wave currentWave;

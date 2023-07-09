@@ -268,7 +268,6 @@ MonoBehaviour:
   fuelReducer: 0.01
   fuelRotationSpeed: 5
   maxFuel: 1
-  currency: {fileID: 1559689099864486693}
   UIOpenSpeed: 10
 --- !u!1001 &640603944488552521
 PrefabInstance:
@@ -649,17 +648,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda1d02a1b392e34b960c25219397898, type: 3}
---- !u!114 &1559689099864486693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7098330995548869107, guid: eda1d02a1b392e34b960c25219397898, type: 3}
-  m_PrefabInstance: {fileID: 8585961607843898070}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1599231749816964768 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6996036744037577846, guid: eda1d02a1b392e34b960c25219397898, type: 3}

@@ -5,8 +5,8 @@ using UnityEngine;
 public class CollectiblesManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    private GameObject[] collectibles;
+    [SerializeField] private GameObject[] collectibles;
+
     void OnEnable()
     {
         DebrisMovement.OnDebrisCrash += summonCollectible;
