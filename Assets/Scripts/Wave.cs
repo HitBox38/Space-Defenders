@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wave : MonoBehaviour
+public class Wave
 {
-    private GameObject selectedPath;
-    private List<GameObject> allUnits;
+    private GameObject currentPath;
+    private List<GameObject> allUnits = new List<GameObject>();
 
     public void AppendUnit(GameObject unit)
     {
@@ -19,6 +19,11 @@ public class Wave : MonoBehaviour
 
     public void SelectedPath(GameObject path)
     {
-        selectedPath = path;
+        currentPath = path;
+    }
+
+    public GameObject getPath()
+    {
+        return currentPath;
     }
 }
