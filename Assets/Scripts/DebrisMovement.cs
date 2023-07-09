@@ -33,9 +33,11 @@ public class DebrisMovement : MonoBehaviour
         if (coll.tag == "Unit")
         {
             OnDebrisCrash?.Invoke(transform.position);
+            /*
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(coll.gameObject);
             Destroy(coll.GetComponent<UnitMovement>().GetCurrentPath());
+            */
             Destroy(gameObject);
         }
     }

@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9bbead25cf00c4db67135fe226bacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 500
   rotationSpeed: 25
   reAimTime: 0.1
   canon: {fileID: 7114936944738145834}

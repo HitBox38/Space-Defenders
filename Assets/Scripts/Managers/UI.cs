@@ -14,11 +14,38 @@ public class UI : MonoBehaviour
     [Header("UI Open Speed")]
     [SerializeField] private float UIOpenSpeed = 5;
 
+    [Header("Managers Inputs")]
+    [SerializeField] private WaveManager waveManager;
+
+    [Header("Selected Path Image")]
+    [SerializeField] private Image selectedImagePath;
+    [SerializeField] private Sprite[] pathsSprites;
+
+    [Header("Unit Numbers")]
+    [SerializeField] private TMP_Text[] UnitNumbersHUD;
+    [SerializeField] private TMP_Text[] UnitNumbersPurchaseMenu;
+
     private Coroutine unitsMoveCo;
     private Vector3 UISreenPosition;
     private float _fuel = 1f;
 
     public float fuel => _fuel;
+
+    private void Awake()
+    {
+        UnitStatManager.OnUnitDestroy += ReduceUnitNumberUI;
+    }
+
+    private void OnDestroy()
+    {
+        UnitStatManager.OnUnitDestroy -= ReduceUnitNumberUI;
+    }
+
+    private void ReduceUnitNumberUI(int index)
+    {
+        UnitNumbersHUD[index].text = (int.Parse(UnitNumbersHUD[index].text) - 1).ToString();
+        UnitNumbersPurchaseMenu[index].text = (int.Parse(UnitNumbersPurchaseMenu[index].text) - 1).ToString();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +58,9 @@ public class UI : MonoBehaviour
         float fuelIndicatorAngle = (_fuel - 0) * (90 - (-90)) / (maxFuel - 0) + (-90);
         fuelClock.rotation = Quaternion.Lerp(fuelClock.rotation, Quaternion.Euler(0, 0, -fuelIndicatorAngle), Time.deltaTime * fuelRotationSpeed);
 
-        if (_fuel == 0)
+        if (_fuel <= 0)
         {
-
+            PauseMenu.Instance.ShowLoseMenu();
             // go to game over screen
         }
     }
@@ -71,6 +98,11 @@ public class UI : MonoBehaviour
     public void SetPopUpPos(GameObject obj)
     {
         UISreenPosition = obj.transform.localPosition;
+    }
+
+    public void ChangeSelectedPathImage()
+    {
+        selectedImagePath.sprite = pathsSprites[waveManager.GetCurrentWaveIndex];
     }
 
     private IEnumerator MoveUnitsUI(Transform toMove, Vector3 position)

@@ -44,3 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9931d4bce1d9fcc4ca0b89e03a05397e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallCount: {fileID: 0}
+  mediumCount: {fileID: 0}
+  largeCount: {fileID: 0}
+  moneyDisplay: {fileID: 0}
+  units: []
+  paths:
+  - {fileID: 4922621141834788688, guid: 82993f577f603c34fa83a4055d83be90, type: 3}
+  - {fileID: 4922621141834788688, guid: b514df0ea4ff934478a3cf16c959c833, type: 3}
+  - {fileID: 4922621141834788688, guid: 36306ddb7d0184e409db42ed95b052d3, type: 3}
+  spawnerPos: {fileID: 0}
