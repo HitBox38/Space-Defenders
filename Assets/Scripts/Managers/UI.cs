@@ -131,6 +131,7 @@ public class UI : MonoBehaviour
 
     public void ChangeSelectedPathImage()
     {
+        Debug.Log(waveManager.GetCurrentWaveIndex);
         selectedImagePath.sprite = pathsSprites[waveManager.GetCurrentWaveIndex];
     }
 
