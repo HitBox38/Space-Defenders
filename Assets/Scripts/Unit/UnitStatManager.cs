@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitStatManager : MonoBehaviour
@@ -10,10 +8,27 @@ public class UnitStatManager : MonoBehaviour
     [SerializeField]
     private int cost, strength;
 
-    public void changeSpeed(float valspeed)
+    public void ChangeSpeed(float valSpeed)
     {
-        speed += valspeed;
+        speed += valSpeed;
     }
+
+    public void ChangeStrength(float valMultiplier)
+    {
+        strength *= (int)valMultiplier;
+        kamikaze *= valMultiplier;
+    }
+
+    public void ChangeHealth(float valHealth)
+    {
+        health += valHealth;
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
     // Return speed to UnitMovement.cs
     public float GetSpeed()
     {

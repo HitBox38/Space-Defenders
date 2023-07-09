@@ -18,12 +18,22 @@ public class UI : MonoBehaviour
     private Vector3 UISreenPosition;
     private float _fuel = 1f;
 
-    public float fuel => _fuel;
+    public float fuel { get => _fuel; set => _fuel = value; }
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ReduceFillAmountOverTime());
+    }
+
+    private void OnEnable()
+    {
+        FuelCol.OnCollect += AddFuel;
+    }
+
+    private void OnDisable()
+    {
+        FuelCol.OnCollect -= AddFuel;
     }
 
     private void Update()
@@ -60,6 +70,11 @@ public class UI : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    private void AddFuel(float amount)
+    {
+        _fuel = Mathf.Clamp(amount + _fuel, 0, 1);
     }
 
     public void PopUpUI(GameObject toMove)
