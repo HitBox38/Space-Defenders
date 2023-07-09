@@ -35,6 +35,11 @@ public class UnitMovement : MonoBehaviour
         return waypoints;
     }
 
+    public void ChangeSpeed(float speed)
+    {
+        moveSpeed += speed;
+    }
+
     public void SetFollowParams(List<Vector3> points, float speed)
     {
         // Set initial position
@@ -122,10 +127,6 @@ public class UnitMovement : MonoBehaviour
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
             Destroy(currentPath);
-        }
-        else if (col.tag == "Collectible")
-        {
-            Destroy(col.gameObject);
         }
     }
 }

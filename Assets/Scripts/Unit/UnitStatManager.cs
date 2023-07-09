@@ -10,6 +10,10 @@ public class UnitStatManager : MonoBehaviour
     [SerializeField]
     private int cost, strength;
 
+    public void changeSpeed(float valspeed)
+    {
+        speed += valspeed;
+    }
     // Return speed to UnitMovement.cs
     public float GetSpeed()
     {

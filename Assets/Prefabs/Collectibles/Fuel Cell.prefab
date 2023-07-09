@@ -53,7 +53,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2956753624470722620, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
       propertyPath: m_Name
-      value: Collectible
+      value: Fuel Cell
       objectReference: {fileID: 0}
+    - target: {fileID: 6074363440877747131, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611569263537278091, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 91935eece3e4a2046a0bbd3539e71382, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
