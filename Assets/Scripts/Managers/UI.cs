@@ -15,7 +15,7 @@ public class UI : MonoBehaviour
     [SerializeField] private float UIOpenSpeed = 5;
     [Header("Settlement UI")]
     [SerializeField] private Image settlementHealth;
-    [SerializeField] private float settlementHealthReducer = 5f;
+    [SerializeField] private float settlementHealthReducer = 0.5f;
 
     private Coroutine unitsMoveCo;
     private Vector3 UISreenPosition;
@@ -103,6 +103,16 @@ public class UI : MonoBehaviour
 
     private void UpdateSettlementUI(float health)
     {
-        settlementHealth.fillAmount = Mathf.Lerp(settlementHealth.fillAmount, health / 200, Time.deltaTime * settlementHealthReducer);
+        StartCoroutine(ReduceFillAmountSettlement(health));
+    }
+
+    private IEnumerator ReduceFillAmountSettlement(float health)
+    {
+        float targetFillAmount = health / 1500;
+        while (settlementHealth.fillAmount > targetFillAmount)
+        {
+            settlementHealth.fillAmount = Mathf.Lerp(settlementHealth.fillAmount, targetFillAmount, Time.deltaTime * settlementHealthReducer);
+            yield return null;
+        }
     }
 }

@@ -269,6 +269,8 @@ MonoBehaviour:
   fuelRotationSpeed: 5
   maxFuel: 1
   UIOpenSpeed: 10
+  settlementHealth: {fileID: 5003877801202096364}
+  settlementHealthReducer: 5
 --- !u!1001 &640603944488552521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -658,3 +660,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5253334310224622946, guid: eda1d02a1b392e34b960c25219397898, type: 3}
   m_PrefabInstance: {fileID: 8585961607843898070}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5003877801202096364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3627138015189563962, guid: eda1d02a1b392e34b960c25219397898, type: 3}
+  m_PrefabInstance: {fileID: 8585961607843898070}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

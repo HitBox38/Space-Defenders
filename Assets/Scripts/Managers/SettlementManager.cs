@@ -5,7 +5,7 @@ using UnityEngine;
 public class SettlementManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float health = 200;
+    private float health = 1500;
     private bool stopGame = false;
 
     public static event Action<float> OnHit;
