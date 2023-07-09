@@ -13,12 +13,25 @@ public class UI : MonoBehaviour
     [SerializeField, Min(1)] private float maxFuel = 1f;
     [Header("UI Open Speed")]
     [SerializeField] private float UIOpenSpeed = 5;
+    [Header("Settlement UI")]
+    [SerializeField] private Image settlementHealth;
+    [SerializeField] private float settlementHealthReducer = 5f;
 
     private Coroutine unitsMoveCo;
     private Vector3 UISreenPosition;
     private float _fuel = 1f;
 
     public float fuel => _fuel;
+
+    private void OnEnable()
+    {
+        SettlementManager.OnHit += UpdateSettlementUI;
+    }
+
+    private void OnDisable()
+    {
+        SettlementManager.OnHit -= UpdateSettlementUI;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -86,5 +99,10 @@ public class UI : MonoBehaviour
     private bool V3AlmostEqual(Vector3 a, Vector3 b, float comparisonNumber)
     {
         return Vector3.SqrMagnitude(a - b) < comparisonNumber;
+    }
+
+    private void UpdateSettlementUI(float health)
+    {
+        settlementHealth.fillAmount = Mathf.Lerp(settlementHealth.fillAmount, health / 200, Time.deltaTime * settlementHealthReducer);
     }
 }

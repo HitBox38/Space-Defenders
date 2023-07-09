@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +8,12 @@ public class SettlementManager : MonoBehaviour
     private float health = 200;
     private bool stopGame = false;
 
+    public static event Action<float> OnHit;
+
     public void DecrementHealth(float str)
     {
         health -= str;
+        OnHit?.Invoke(health);
     }
 
     void Update()
