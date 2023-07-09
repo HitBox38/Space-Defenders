@@ -127,5 +127,11 @@ public class UnitMovement : MonoBehaviour
         {
             Destroy(col.gameObject);
         }
+        else if(col.tag == "Debris")
+        {
+            Instantiate(explosion, transform.position, explosion.transform.rotation);
+
+            GetComponent<UnitStatManager>().DecrementHealth(1000);
+        }
     }
 }

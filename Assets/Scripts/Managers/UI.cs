@@ -58,9 +58,9 @@ public class UI : MonoBehaviour
         float fuelIndicatorAngle = (_fuel - 0) * (90 - (-90)) / (maxFuel - 0) + (-90);
         fuelClock.rotation = Quaternion.Lerp(fuelClock.rotation, Quaternion.Euler(0, 0, -fuelIndicatorAngle), Time.deltaTime * fuelRotationSpeed);
 
-        if (_fuel == 0)
+        if (_fuel <= 0)
         {
-
+            PauseMenu.Instance.ShowLoseMenu();
             // go to game over screen
         }
     }

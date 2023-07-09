@@ -5,7 +5,7 @@ using UnityEngine;
 public class SettlementManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float health = 200;
+    [SerializeField] private float health = 200;
     private bool stopGame = false;
 
     public void DecrementHealth(float str)
@@ -19,7 +19,9 @@ public class SettlementManager : MonoBehaviour
         {
             if (health <= 0)
             {
-                print("death");
+                //print("death");
+
+                PauseMenu.Instance.ShowWinMenu();
                 stopGame = true;
             }
         }
