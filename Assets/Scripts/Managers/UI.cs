@@ -28,11 +28,18 @@ public class UI : MonoBehaviour
     [SerializeField] private TMP_Text[] UnitNumbersHUD;
     [SerializeField] private TMP_Text[] UnitNumbersPurchaseMenu;
 
+    [Header("Buff Effects")]
+    [SerializeField] private Sprite[] buffEffects;
+    [SerializeField] private Image buffImage;
+    [SerializeField, Range(0f, 1f)] private float buffFadePlus = .1f;
+    [SerializeField, Min(0)] private float buffFadeDelay = .1f;
+
     private Coroutine unitsMoveCo;
+    private Coroutine buffsFadeCo;
     private Vector3 UISreenPosition;
     private float _fuel = 1f;
 
-    public float fuel => _fuel;
+    public float fuel { get => _fuel; set => _fuel = value; }
 
     private void Awake()
     {
@@ -56,6 +63,18 @@ public class UI : MonoBehaviour
     void Start()
     {
         StartCoroutine(ReduceFillAmountOverTime());
+    }
+
+    private void OnEnable()
+    {
+        FuelCol.OnCollect += AddFuel;
+        CollectibleMovement.OnPickUpBuffTyped += SetBuff;
+    }
+
+    private void OnDisable()
+    {
+        FuelCol.OnCollect -= AddFuel;
+        CollectibleMovement.OnPickUpBuffTyped -= SetBuff;
     }
 
     private void Update()
@@ -94,6 +113,11 @@ public class UI : MonoBehaviour
         }
     }
 
+    private void AddFuel(float amount)
+    {
+        _fuel = Mathf.Clamp(amount + _fuel, 0, 1);
+    }
+
     public void PopUpUI(GameObject toMove)
     {
         if (unitsMoveCo == null)
@@ -118,6 +142,34 @@ public class UI : MonoBehaviour
             toMove.localPosition = Vector3.Lerp(toMove.localPosition, position, UIOpenSpeed * Time.deltaTime);
         }
         unitsMoveCo = null;
+    }
+
+    public void SetBuff(int buffIndex)
+    {
+        if (buffIndex < 0) return;
+        buffImage.sprite = buffEffects[buffIndex];
+        if(buffsFadeCo == null)
+            buffsFadeCo = StartCoroutine(BuffDisplayFadeIn());
+    }
+
+    private IEnumerator BuffDisplayFadeIn()
+    {
+        while(buffImage.color.a < .999f)
+        {
+            buffImage.color = new Color(255, 255, 255, buffImage.color.a + buffFadePlus);
+            yield return new WaitForSeconds(buffFadeDelay);
+        }
+        yield return new WaitForSeconds(2);
+        StartCoroutine(BuffDisplayFadeOut());
+    }
+    private IEnumerator BuffDisplayFadeOut()
+    {
+        while (buffImage.color.a > 0.001f)
+        {
+            buffImage.color = new Color(255, 255, 255, buffImage.color.a - buffFadePlus);
+            yield return new WaitForSeconds(buffFadeDelay);
+        }
+        buffsFadeCo = null;
     }
 
     private bool V3AlmostEqual(Vector3 a, Vector3 b, float comparisonNumber)

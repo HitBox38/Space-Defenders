@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
@@ -15,6 +13,26 @@ public class UnitStatManager : MonoBehaviour
     [SerializeField] private int unitIndex = 0;
 
     public static event Action<int> OnUnitDestroy;
+    public void ChangeSpeed(float valSpeed)
+    {
+        speed += valSpeed;
+    }
+
+    public void ChangeStrength(float valMultiplier)
+    {
+        strength *= (int)valMultiplier;
+        kamikaze *= valMultiplier;
+    }
+
+    public void ChangeHealth(float valHealth)
+    {
+        health += valHealth;
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
 
     // Return speed to UnitMovement.cs
     public float GetSpeed()

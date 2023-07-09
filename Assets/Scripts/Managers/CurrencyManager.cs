@@ -4,7 +4,7 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text moneyDisplay;
-    private int money = 100;
+    [SerializeField] private int money = 100;
 
     void Start()
     {

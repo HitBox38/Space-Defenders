@@ -47,7 +47,7 @@ public class ProjectileManager : MonoBehaviour
         if (col.tag == "Settlement")
         {
             col.gameObject.GetComponent<SettlementManager>().DecrementHealth(strength);
-
+            Debug.Log(strength);
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
         }

@@ -35,6 +35,11 @@ public class UnitMovement : MonoBehaviour
         return waypoints;
     }
 
+    public void ChangeSpeed(float speed)
+    {
+        moveSpeed += speed;
+    }
+
     public void SetFollowParams(List<Vector3> points, float speed)
     {
         // Set initial position

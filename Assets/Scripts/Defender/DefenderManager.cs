@@ -115,11 +115,13 @@ public class DefenderManager : MonoBehaviour
         if (coll.tag == "UnitProjectile")
         {
             int str = coll.gameObject.GetComponent<ProjectileManager>().GetStrength();
+            Debug.Log("Shot: " + str);
             DamageDefender(str);
         }
         else if (coll.tag == "Unit")
         {
             int str = (int)coll.gameObject.GetComponent<UnitStatManager>().GetKamikaze();
+            Debug.Log("Kamakazie: " + str);
             DamageDefender(str);
         }
     }

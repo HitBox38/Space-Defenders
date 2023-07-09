@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibles:
+  - {fileID: 4325705695858014344, guid: 9095ef05b78f97a4abe1fee74f17beec, type: 3}
+  - {fileID: 88906383550181337, guid: 5738e15e5ea8e07439642d1ad93f9156, type: 3}
   - {fileID: 2956753624470722620, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+  - {fileID: 6520707338643932650, guid: 896c244c3d8f0834083ad116eda5f4b3, type: 3}

@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3006489793981484306, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+      propertyPath: buffIndex
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 512640945030530234, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2956753624470722620, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
       propertyPath: m_Name
-      value: Collectible
+      value: Fuel Cell
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6074363440877747131, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611569263537278091, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 91935eece3e4a2046a0bbd3539e71382, type: 3}
+    m_RemovedComponents:
+    - {fileID: 8785722787032113375, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+--- !u!1 &88906383550181337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2956753624470722620, guid: 6692f944534813a49ba59f6d86b8e596, type: 3}
+  m_PrefabInstance: {fileID: 2896839455613188069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &411891428397092158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88906383550181337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1856da803b4193f49b01caba99aa6e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

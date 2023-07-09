@@ -8,8 +8,7 @@ public class UnitShoot : MonoBehaviour
     private float fireRate;
     private int strength;
 
-    [SerializeField]
-    private GameObject projectile;
+    [SerializeField] private GameObject projectile;
     private float TimeT;
 
     // Start is called before the first frame update
@@ -36,5 +35,10 @@ public class UnitShoot : MonoBehaviour
                 TimeT = 0;
             }
         }
+    }
+
+    public void ChangeStrength(float newStrength)
+    {
+        strength *= (int)newStrength;
     }
 }
