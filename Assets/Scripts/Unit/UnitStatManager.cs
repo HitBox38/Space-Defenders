@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class UnitStatManager : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class UnitStatManager : MonoBehaviour
 
     [SerializeField]
     private int cost, strength;
+
+    [Header("For UI")]
+    [SerializeField] private int unitIndex = 0;
+
+    public static event Action<int> OnUnitDestroy;
 
     // Return speed to UnitMovement.cs
     public float GetSpeed()
@@ -48,6 +54,7 @@ public class UnitStatManager : MonoBehaviour
     {
         if (health <= 0)
         {
+            OnUnitDestroy?.Invoke(unitIndex);
             Destroy(gameObject);
             Destroy(GetComponent<UnitMovement>().GetCurrentPath());
         }

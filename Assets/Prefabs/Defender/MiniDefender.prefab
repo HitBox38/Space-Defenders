@@ -12,6 +12,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7114936943535781688, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
+      propertyPath: maxHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114936943535781688, guid: 5bc15d35393fe094e9786f4802fbbed1, type: 3}
       propertyPath: playerShipDetectorRadius
       value: 4
       objectReference: {fileID: 0}

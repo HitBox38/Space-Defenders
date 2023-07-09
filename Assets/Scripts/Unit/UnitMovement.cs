@@ -120,8 +120,8 @@ public class UnitMovement : MonoBehaviour
             col.gameObject.GetComponent<SettlementManager>().DecrementHealth(GetComponent<UnitStatManager>().GetKamikaze());
 
             Instantiate(explosion, transform.position, explosion.transform.rotation);
-            Destroy(gameObject);
-            Destroy(currentPath);
+
+            GetComponent<UnitStatManager>().DecrementHealth(1000);
         }
         else if (col.tag == "Collectible")
         {

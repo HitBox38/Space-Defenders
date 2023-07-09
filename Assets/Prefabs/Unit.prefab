@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258c15808336d36479b91d002895b8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 4922621141834788688, guid: 82993f577f603c34fa83a4055d83be90, type: 3}
   explosion: {fileID: 6324212439248621650, guid: de883278dcba4994cb809a53f48d7242, type: 3}
 --- !u!50 &4583620336316625151
 Rigidbody2D:
@@ -171,3 +170,4 @@ MonoBehaviour:
   fireRate: 20
   cost: 45
   strength: 5
+  unitIndex: 1
