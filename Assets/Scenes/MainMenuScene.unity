@@ -598,8 +598,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tomer Norman\nAviv Zackhem\nKirill Veprov\nAdi Zahavi\nOfri [insert L]\nRoee
-    [insert L]\r"
+  m_text: 'Tomer Norman
+
+    Aviv Zackhem
+
+    Kirill Veprov
+
+    Adi Zahavi
+
+    Ofri
+    Gutman
+
+    Roee Geva'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 669ee96f754b2444e85dc6251951e6bf, type: 2}
   m_sharedMaterial: {fileID: -8730371421165872326, guid: 669ee96f754b2444e85dc6251951e6bf, type: 2}
