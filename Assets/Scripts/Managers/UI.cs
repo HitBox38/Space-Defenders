@@ -13,6 +13,9 @@ public class UI : MonoBehaviour
     [SerializeField, Min(1)] private float maxFuel = 1f;
     [Header("UI Open Speed")]
     [SerializeField] private float UIOpenSpeed = 5;
+    [Header("Settlement UI")]
+    [SerializeField] private Image settlementHealth;
+    [SerializeField] private float settlementHealthReducer = 0.5f;
 
     [Header("Managers Inputs")]
     [SerializeField] private WaveManager waveManager;
@@ -33,11 +36,13 @@ public class UI : MonoBehaviour
 
     private void Awake()
     {
+        SettlementManager.OnHit += UpdateSettlementUI;
         UnitStatManager.OnUnitDestroy += ReduceUnitNumberUI;
     }
 
     private void OnDestroy()
     {
+        SettlementManager.OnHit -= UpdateSettlementUI;
         UnitStatManager.OnUnitDestroy -= ReduceUnitNumberUI;
     }
 
@@ -118,5 +123,20 @@ public class UI : MonoBehaviour
     private bool V3AlmostEqual(Vector3 a, Vector3 b, float comparisonNumber)
     {
         return Vector3.SqrMagnitude(a - b) < comparisonNumber;
+    }
+
+    private void UpdateSettlementUI(float health)
+    {
+        StartCoroutine(ReduceFillAmountSettlement(health));
+    }
+
+    private IEnumerator ReduceFillAmountSettlement(float health)
+    {
+        float targetFillAmount = health / 1500;
+        while (settlementHealth.fillAmount > targetFillAmount)
+        {
+            settlementHealth.fillAmount = Mathf.Lerp(settlementHealth.fillAmount, targetFillAmount, Time.deltaTime * settlementHealthReducer);
+            yield return null;
+        }
     }
 }
